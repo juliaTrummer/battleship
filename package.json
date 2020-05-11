@@ -1,18 +1,12 @@
 {
-  "name": "battleship",
+  "name": "fhbattleship",
   "version": "1.0.0",
-  "description": "Webservices FH Joanneum 2020",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/juliaTrummer/battleship"
+  "dependencies": {
+    "express": "4.13.3"
   },
   "author": "Julia Trummer",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "licence": "FH Joanneum"
 }
