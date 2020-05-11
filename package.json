@@ -1,0 +1,18 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "Webservices FH Joanneum 2020",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git-iit.fh-joanneum.at/msd-webserv/ws20_projects/battleship.git"
+  },
+  "author": "Julia Trummer",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
