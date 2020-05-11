@@ -51,7 +51,22 @@ $(function () {
 
     //username input
     submitButton.on("click", function () {
+        onSubmit();
+    })
+
+    formControl.keyup(function(e){
+        if(e.which == 13 && formControl.val().length !== 0){
+            onSubmit();
+        } else if(formControl.val().length > 0){
+            submitButton.prop('disabled', false);
+        } else if(formControl.val().length === 0){
+            submitButton.prop('disabled', true);
+        }
+    });
+
+    function onSubmit(){
         greeting.text('Hello ' + formControl.val() + "!");
+        //TODO: take this value for the prototype
         username = formControl.val();
         formControl.val("");
         submitButton.prop('disabled', true);
@@ -60,15 +75,5 @@ $(function () {
             submitButton.text('Update');
             formControl.attr('placeholder', 'Enter a new username');
         }
-    })
-
-    formControl.on("input", function () {
-        if ((formControl.val()).length > 0) {
-            submitButton.prop('disabled', false);
-        } else {
-            submitButton.prop('disabled', true);
-        }
-    })
-
-
+    }
 });
