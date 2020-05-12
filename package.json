@@ -5,7 +5,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "pg": "^8.1.0"
   },
   "author": "Julia Trummer",
   "licence": "FH Joanneum"
