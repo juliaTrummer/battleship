@@ -1,4 +1,4 @@
-# battleship
+# Battleship Game
 WebService Development - Battleship Game
 
 ## Gameplay
