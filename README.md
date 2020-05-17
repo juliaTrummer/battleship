@@ -2,7 +2,7 @@
 WebService Development - Battleship Game
 
 ## Gameplay
-Grundsätzlich wird anfangs ausgelost wer schießen darf. Die erste Person gitb eine Koordinate an, auf die er so zu sagen feuert, zum Beispiel C3. Beim "beschossenen" User wird dieses Feld nun dargestellt. Es kann Wasser oder ein Schiff getroffen werden. ein Schiff gilt a,s versenkt, wenn alle Felder des Schiffes getroffen wurden. Der Schießende sieht auf seinem eingenen Spielfeld ob er etwas getroffen hat oder nicht. Grundsätzlich wechseln die User jede Runde zwischen den Schießenden und dem Beschossenen. 
+Grundsätzlich wird anfangs ausgelost wer schießen darf. Die erste Person gibt eine Koordinate an, auf die er so zu sagen feuert, zum Beispiel C3. Beim "beschossenen" User wird dieses Feld nun dargestellt. Es kann Wasser oder ein Schiff getroffen werden. ein Schiff gilt als versenkt, wenn alle Felder des Schiffes getroffen wurden. Der Schießende sieht auf seinem eingenen Spielfeld ob er etwas getroffen hat oder nicht. Grundsätzlich wechseln die User jede Runde zwischen den Schießenden und dem Beschossenen. 
 Wenn ein "Treffer" gemacht wird kann der Schießende noch einen Zug ausführen, dass geht so lange weiter bis er ins Wasser schießt.
 
 
