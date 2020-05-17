@@ -7,11 +7,47 @@ $(function () {
     var grid = $('#tableGrid');
     var submitButton = $('#submitButton');
     var table = $('<table>');
+    var gridArray = new Array(100).fill("empty");
+
+    //websocket
+    window.WebSocket = window.WebSocket || window.MozWebSocket;
+
+    if (!window.WebSocket) {
+        console.log('Sorry, your browser does not support websockets')
+        return;
+      }
+    
+      //TODO: change this to the heroku ip address
+      var connection = new WebSocket('ws://127.0.0.1:8080');
+    
+      connection.onopen = function () {
+          console.log('Websocket opened!')
+      };
+
+      connection.onerror = function (error) {
+        console.log('Sorry, there is a problem with the connection or our server is tired :)')
+      };
+
+      connection.onmessage = function (message) {
+        try {
+          var json = JSON.parse(message.data);
+        } catch (e) {
+          console.log('Invalid JSON: ', message.data);
+          return;
+        }
+        console.log('Hello %s!', json.data.username)
+      };
+
+      setInterval(function() {
+        if (connection.readyState !== 1) {
+          console.log('Unable to communicate with the WebSocket server.')
+        }
+      }, 3000);
 
 
     //table
     $(document).ready(function () {
-        console.log('document is ready');
+        console.log('Document is ready :)');
         createTable();
     });
 
@@ -45,6 +81,7 @@ $(function () {
             return;
         }
         $('#' + id).append($('<i>').addClass('material-icons').text('directions_boat'));
+        //$('#' + id).append($('<i>').addClass('material-icons').text('close'));
         $('#' + id).attr('disabled', 'disabled');
         console.log('clicked on cell: ' + id);
     }
@@ -65,9 +102,9 @@ $(function () {
     });
 
     function onSubmit(){
-        greeting.text('Hello ' + formControl.val() + "!");
-        //TODO: take this value for the prototype
+        greeting.text('Hello ' + formControl.val() + "!");        
         username = formControl.val();
+        connection.send(username)
         formControl.val("");
         submitButton.prop('disabled', true);
 
