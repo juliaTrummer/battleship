@@ -15,34 +15,33 @@ $(function () {
     if (!window.WebSocket) {
         console.log('Sorry, your browser does not support websockets')
         return;
-      }
-    
-      //TODO: change this to the heroku ip address
-      var connection = new WebSocket('ws://127.0.0.1:8080');
-    
-      connection.onopen = function () {
-          console.log('Websocket opened!')
-      };
+    }
 
-      connection.onerror = function (error) {
+    var connection = new WebSocket('ws://fh-battleship.herokuapp.com')
+
+    connection.onopen = function () {
+        console.log('Websocket opened!')
+    };
+
+    connection.onerror = function (error) {
         console.log('Sorry, there is a problem with the connection or our server is tired :)')
-      };
+    };
 
-      connection.onmessage = function (message) {
+    connection.onmessage = function (message) {
         try {
-          var json = JSON.parse(message.data);
+            var json = JSON.parse(message.data);
         } catch (e) {
-          console.log('Invalid JSON: ', message.data);
-          return;
+            console.log('Invalid JSON: ', message.data);
+            return;
         }
         console.log('Hello %s!', json.data.username)
-      };
+    };
 
-      setInterval(function() {
+    setInterval(function () {
         if (connection.readyState !== 1) {
-          console.log('Unable to communicate with the WebSocket server.')
+            console.log('Unable to communicate with the WebSocket server.')
         }
-      }, 3000);
+    }, 3000);
 
 
     //table
@@ -91,18 +90,18 @@ $(function () {
         onSubmit();
     })
 
-    formControl.keyup(function(e){
-        if(e.which == 13 && formControl.val().length !== 0){
+    formControl.keyup(function (e) {
+        if (e.which == 13 && formControl.val().length !== 0) {
             onSubmit();
-        } else if(formControl.val().length > 0){
+        } else if (formControl.val().length > 0) {
             submitButton.prop('disabled', false);
-        } else if(formControl.val().length === 0){
+        } else if (formControl.val().length === 0) {
             submitButton.prop('disabled', true);
         }
     });
 
-    function onSubmit(){
-        greeting.text('Hello ' + formControl.val() + "!");        
+    function onSubmit() {
+        greeting.text('Hello ' + formControl.val() + "!");
         username = formControl.val();
         connection.send(username)
         formControl.val("");

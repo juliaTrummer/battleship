@@ -1,36 +1,21 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const { Server } = require('ws');
+
+var server = express();
+var clients = [ ];
 
 var port = process.env.PORT || 8080
-app.use(express.static(__dirname));
+server.use(express.static(__dirname));
 
-app.get("/", function (req, res) {
+server.get("/", function (req, res) {
     res.render("index");
 })
 
-//TODO: use this again
-// app.listen(port, function () {
-//     console.log("Server is listening on port ", port)
-// })
-
-var clients = [ ];
-
-var webSocketServerPort = port;
-var webSocketServer = require('websocket').server;
-var http = require('http');
-
-var server = http.createServer(function(request, response){
-    //empty
-});
-
-//check this, if the heroku server is already running
-server.listen(webSocketServerPort, function(){
-    console.log('Server is now listening to: ', webSocketServerPort)
+server.listen(port, function(){
+    console.log('Server is now listening to: ', port)
 })
 
-var wsServer = new webSocketServer({
-    httpServer: server
-})
+const wsServer = new Server({server})
 
 wsServer.on('request', function(request) {
     console.log((new Date()) + ' Connection from origin ' + request.origin + '.');
