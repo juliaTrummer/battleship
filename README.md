@@ -6,7 +6,7 @@ Grundsätzlich wird anfangs ausgelost wer schießen darf. Die erste Person gitb 
 Wenn ein "Treffer" gemacht wird kann der Schießende noch einen Zug ausführen, dass geht so lange weiter bis er ins Wasser schießt.
 
 
-## roject Explantion
+## Heroku Configuration
 Unser Projekt funktioniert über Heroku.
 1) Einen Heroku account erstellen 
 2) Daraufhin die Heroku CLI installieren
@@ -34,4 +34,12 @@ Unser Projekt funktioniert über Heroku.
   b)"heroku local web"
 
 
-## Technology Documentation
+## Technology Documentation - Early Bird 
+Derzeit hat unsere WebApplikation ein Frontend in dem man die Felder anklicken kann. Gerade kann man noch alle Felder auswählen, später soll es dann möglich sein aus einem vorgegebenen Set von Schiffen auszuwählen. 
+
+Hier wurde im ersten Schritt ein Websocket programmiert, dieser ist für die Kommunikation zwischen den Spielern zuständig. So werden neu hinzugefügt bzw. upgedatete Usernamen gleich wie eine Message vom Client 1 an den Server und von dort an alle anderen Clients verschickt. Diese werden dann bei jedem Client in der Console ausgegeben.
+
+Im letzten Schritt welcher aber noch nicht im aktuellen Projekt implementiert ist haben wir uns die Verbindung zur Datenbank angesehen. Heroku stellt gratis Datanbanken zur verfügng - wir haben uns hier auf postgresql geeinigt. 
+Wir haben eine API erstellt mit der man die User aus der DB auslesen und speichern kann. 
+Der Code dafür ist in unserem zweiten Repository. 
+
