@@ -17,7 +17,7 @@ $(function () {
         return;
     }
 
-    var connection = new WebSocket('ws://fh-battleship.herokuapp.com')
+    var connection = new WebSocket('wss://fh-battleship.herokuapp.com')
 
     connection.onopen = function () {
         console.log('Websocket opened!')
