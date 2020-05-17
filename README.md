@@ -10,7 +10,7 @@ Wenn ein "Treffer" gemacht wird kann der Schießende noch einen Zug ausführen, 
 Unser Projekt funktioniert über Heroku.
 1) Einen Heroku account erstellen 
 2) Daraufhin die Heroku CLI installieren
-  a)"Sudo snap install --classic heroku"
+  1)"Sudo snap install --classic heroku"
 3) Ein Projekt folder erstellen (z.B über WebStorm)
   a) in diesem Projekt folder "heroku login"
 4) SSH Keys hinzufügen wenn nicht bereits erstellt
@@ -37,7 +37,7 @@ Unser Projekt funktioniert über Heroku.
 ## Technology Documentation - Early Bird 
 Derzeit hat unsere WebApplikation ein Frontend in dem man die Felder anklicken kann. Gerade kann man noch alle Felder auswählen, später soll es dann möglich sein aus einem vorgegebenen Set von Schiffen auszuwählen. 
 
-Hier wurde im ersten Schritt ein Websocket programmiert, dieser ist für die Kommunikation zwischen den Spielern zuständig. So werden neu hinzugefügt bzw. upgedatete Usernamen gleich wie eine Message vom Client 1 an den Server und von dort an alle anderen Clients verschickt. Diese werden dann bei jedem Client in der Console ausgegeben.
+Hier wurde im ersten Schritt ein Websocket programmiert, dieser ist für die Kommunikation zwischen den Spielern zuständig. So werden neu hinzugefügt bzw. upgedatete Usernamen gleich wie eine Message vom Client 1 an den Server und von dort an alle anderen Clients verschickt. Diese werden dann bei jedem Client in der Console ausgegeben. Dies passiert derzeit noch lokal und der Websocket in Kombination mit Heroku ist noch ein "Work in Progress".
 
 Im letzten Schritt welcher aber noch nicht im aktuellen Projekt implementiert ist haben wir uns die Verbindung zur Datenbank angesehen. Heroku stellt gratis Datanbanken zur verfügng - wir haben uns hier auf postgresql geeinigt. 
 Wir haben eine API erstellt mit der man die User aus der DB auslesen und speichern kann. 
