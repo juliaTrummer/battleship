@@ -18,7 +18,9 @@ $(function () {
       }
     
       //TODO: change this to the heroku ip address
-      var connection = new WebSocket('ws://127.0.0.1:8080');
+     // var connection = new WebSocket('ws://127.0.0.1:8080');
+     var HOST = location.origin.replace(/^http/, 'ws')
+     var connection = new WebSocket(HOST)
     
       connection.onopen = function () {
           console.log('Websocket opened!')
