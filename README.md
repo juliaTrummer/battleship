@@ -10,9 +10,9 @@ Wenn ein "Treffer" gemacht wird kann der Schießende noch einen Zug ausführen, 
 Unser Projekt funktioniert über Heroku.
 1) Einen Heroku account erstellen 
 2) Daraufhin die Heroku CLI installieren
-  a)"sudo snap install --classic heroku"
+`<addr>`"sudo snap install --classic heroku"
 3) Ein Projekt folder erstellen (z.B über WebStorm)
-  a) in diesem Projekt folder "heroku login"
+  a) in diesem Projekt folder `<addr>`"heroku login"
 4) SSH Keys hinzufügen wenn nicht bereits erstellt
   a) überprüfen mit "heroku keys" 
   b) ansonsten "heroku keys:add"
@@ -41,5 +41,5 @@ Hier wurde im ersten Schritt ein Websocket programmiert, dieser ist für die Kom
 
 Im letzten Schritt welcher aber noch nicht im aktuellen Projekt implementiert ist haben wir uns die Verbindung zur Datenbank angesehen. Heroku stellt gratis Datanbanken zur verfügng - wir haben uns hier auf postgresql geeinigt. 
 Wir haben eine API erstellt mit der man die User aus der DB auslesen und speichern kann. 
-Der Code dafür ist in unserem zweiten Repository. 
-
+Der Code dafür ist in unserem zweiten Repository: 
+[GitHub](https://github.com/juliaTrummer/fh-battleship)
