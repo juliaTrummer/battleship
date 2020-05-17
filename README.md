@@ -10,9 +10,9 @@ Wenn ein "Treffer" gemacht wird kann der Schießende noch einen Zug ausführen, 
 Unser Projekt funktioniert über Heroku.
 1) Einen Heroku account erstellen 
 2) Daraufhin die Heroku CLI installieren
-`<addr>`"sudo snap install --classic heroku"
+  1)"Sudo snap install --classic heroku"
 3) Ein Projekt folder erstellen (z.B über WebStorm)
-  a) in diesem Projekt folder `<addr>`"heroku login"
+  a) in diesem Projekt folder "heroku login"
 4) SSH Keys hinzufügen wenn nicht bereits erstellt
   a) überprüfen mit "heroku keys" 
   b) ansonsten "heroku keys:add"
